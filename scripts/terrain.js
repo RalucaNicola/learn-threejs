@@ -9,9 +9,6 @@ import {
 } from "three";
 
 const angleUnit = (Math.PI * 2) / 90;
-const geometry = new BufferGeometry();
-const vertexArray = [];
-const colorArray = [];
 
 const generateTINGeometry = ({
   radius = 100,
@@ -19,6 +16,9 @@ const generateTINGeometry = ({
   borderMargin = 2,
   maxHeight = 15
 } = {}) => {
+  const geometry = new BufferGeometry();
+  const vertexArray = [];
+  const colorArray = [];
 
   // create points along the circle
   for (let angle = 0.01; angle < Math.PI * 2; angle += angleUnit) {
