@@ -1,0 +1,19 @@
+{
+  "name": "learn-threejs",
+  "version": "1.0.0",
+  "description": "A demo app that I created to learn ThreeJS",
+  "main": "main.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "keywords": ["threejs", "javascript", "3D"],
+  "author": "Raluca Nicola",
+  "license": "Apache 2.0",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {
+    "three": "^0.112.1"
+  }
+}
