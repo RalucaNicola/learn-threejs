@@ -7,13 +7,18 @@
     "dev": "parcel index.html",
     "build": "parcel build index.html"
   },
-  "keywords": ["threejs", "javascript", "3D"],
+  "keywords": [
+    "threejs",
+    "javascript",
+    "3D"
+  ],
   "author": "Raluca Nicola",
   "license": "Apache 2.0",
   "devDependencies": {
     "parcel-bundler": "^1.12.4"
   },
   "dependencies": {
+    "delaunator": "^4.0.1",
     "three": "^0.112.1"
   }
 }

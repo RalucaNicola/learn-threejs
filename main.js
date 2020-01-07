@@ -4,22 +4,24 @@ import {
   WebGLRenderer,
   AmbientLight,
   PointLight,
-  AxesHelper
+  AxesHelper,
+  Mesh
 } from "three";
 
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { getTexture } from "./scripts/backgroundTexture";
+import * as backgroundTexture from "./scripts/backgroundTexture";
+import * as terrain from "./scripts/terrain";
 
 const width = window.innerWidth;
 const height = window.innerHeight;
 
 // define scene
 const scene = new Scene();
-scene.background = getTexture(width, height);
+scene.background = backgroundTexture.getTexture(width, height);
 
 // create camera and add a point light to it
 const camera = new PerspectiveCamera(45, width / height, 1, 2000);
-camera.position.set(10, 10, 10);
+camera.position.set(-28.151, 269.558, -591.515);
 camera.lookAt(scene);
 
 const pointLight = new PointLight(0xffffff, 0.6);
@@ -49,6 +51,17 @@ const renderer = new WebGLRenderer({ antialias: true });
 // create the navigation controls
 const controls = new OrbitControls(camera, renderer.domElement);
 
+// add the triangulated irregular network
+const tinGeometry = terrain.generateTINGeometry({
+  countPoints: 200,
+  borderMargin: 10,
+  maxHeight: 10
+});
+const tinMaterial = terrain.generateTINMaterial({ smooth: false });
+const tinMesh = new Mesh(tinGeometry, tinMaterial);
+scene.add(tinMesh);
+
+// re-render the scene every frame
 const animate = () => {
   requestAnimationFrame(animate);
   controls.update();
