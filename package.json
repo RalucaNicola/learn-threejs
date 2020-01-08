@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "dev": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html --public-url ./"
   },
   "keywords": [
     "threejs",
@@ -15,10 +15,14 @@
   "author": "Raluca Nicola",
   "license": "Apache 2.0",
   "devDependencies": {
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-static-files-copy": "^2.2.1"
   },
   "dependencies": {
     "delaunator": "^4.0.1",
     "three": "^0.112.1"
+  },
+  "staticFiles": {
+    "staticPath": "assets"
   }
 }

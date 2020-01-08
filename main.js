@@ -11,6 +11,7 @@ import {
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import * as backgroundTexture from "./scripts/backgroundTexture";
 import * as terrain from "./scripts/terrain";
+import * as sphereGenerator from "./scripts/sphereGenerator";
 
 const width = window.innerWidth;
 const height = window.innerHeight;
@@ -60,6 +61,14 @@ const tinGeometry = terrain.generateTINGeometry({
 const tinMaterial = terrain.generateTINMaterial({ smooth: false });
 const tinMesh = new Mesh(tinGeometry, tinMaterial);
 scene.add(tinMesh);
+
+// add the glass sphere
+const glassSphere = sphereGenerator.createGlassSphere({
+  position: [0, 65, 0],
+  size: 120,
+  transparency: 0.6
+});
+scene.add(glassSphere);
 
 // re-render the scene every frame
 const animate = () => {
