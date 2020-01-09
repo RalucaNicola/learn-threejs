@@ -9,6 +9,7 @@ import {
 } from "three";
 
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import * as backgroundTexture from "./scripts/backgroundTexture";
 import * as terrain from "./scripts/terrain";
 import * as sphereGenerator from "./scripts/sphereGenerator";
@@ -69,6 +70,21 @@ const glassSphere = sphereGenerator.createGlassSphere({
   transparency: 0.6
 });
 scene.add(glassSphere);
+
+// add the GLTF model of a penguin
+// Super awesome low poly penguin model by Damon Pidhajecky
+// https://poly.google.com/view/dLdYN_-2dlE
+
+const loader = new GLTFLoader();
+loader.load('./models/peppermint/model.gltf', (gltf) => {
+  const model = gltf.scene.children[0];
+  model.position.set(0, 10, -10);
+  model.scale.set(85, 85, 85);
+  model.castShadow = true;
+  scene.add(model);
+}, null, (error) => {
+  console.log(error);
+});
 
 // re-render the scene every frame
 const animate = () => {
