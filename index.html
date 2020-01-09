@@ -15,11 +15,33 @@
     canvas {
       display: block;
     }
+    footer {
+      position: absolute;
+      bottom: 0;
+      background-color: rgba(255, 255, 255, 0.5);
+      color: rgb(100, 100, 100);
+      font-size: 0.7em;
+      padding: 0.5em;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    footer a {
+      text-decoration: none;
+      color: #f26199;
+    }
   </style>
 </head>
 
 <body>
   <script src="./main.js"></script>
+  <footer>Fun project whose only goal was to learn some more 3D. Made with
+    <a href="https://threejs.org/" target="_blank">ThreeJS</a>. I used
+    <a href="https://github.com/mapbox/delaunator" target="_blank">Delaunator</a> for computing the triangles for the irregular triangulated network.
+    Glass reflection photo by Paweł Czerwiński on <a href="https://unsplash.com/photos/ruJm3dBXCqw" target="_blank">Unsplash</a>.
+    Pepper the penguin was created by Damon Pidhajecky and she normally lives on
+    <a href="https://poly.google.com/view/dLdYN_-2dlE" target="_blank">Google Poly</a>.
+    The whole project was built with <a href="https://parceljs.org/" target="_blank">Parcel</a>,
+    a tiny and super easy to use application bundler. The code is available on <a href="https://github.com/RalucaNicola/learn-threejs">Github</a>.
+  </footer>
 </body>
 
 </html>
