@@ -1,4 +1,4 @@
-import { Color, Vector3, Uniform, ShaderMaterial, CylinderGeometry, Mesh } from "three";
+import { Color, ShaderMaterial, CylinderGeometry, Mesh } from "three";
 
 const vertexShader = /* glsl */ `
 varying vec2 vUv;
