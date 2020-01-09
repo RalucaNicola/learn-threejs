@@ -11,7 +11,7 @@ import {
 // https://unsplash.com/photos/ruJm3dBXCqw
 // Converted to a cube map using https://jaxry.github.io/panorama-to-cubemap/
 
-const path = "./";
+const path = "./textures/";
 const format = '.png';
 const urls = [
   path + 'px' + format, path + 'nx' + format,
