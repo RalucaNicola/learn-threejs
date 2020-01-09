@@ -83,7 +83,7 @@ const getTexture = (width, height) => {
 
   const bgTexture = new CanvasTexture(canvas2D);
   bgTexture.magFilter = NearestFilter;
-
+  bgTexture.minFilter = NearestFilter;
   return bgTexture;
 }
 
