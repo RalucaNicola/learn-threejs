@@ -13,6 +13,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import * as backgroundTexture from "./scripts/backgroundTexture";
 import * as terrain from "./scripts/terrain";
 import * as sphereGenerator from "./scripts/sphereGenerator";
+import * as cylinderGenerator from "./scripts/cylinderGenerator";
 
 const width = window.innerWidth;
 const height = window.innerHeight;
@@ -85,6 +86,12 @@ loader.load('./models/peppermint/model.gltf', (gltf) => {
 }, null, (error) => {
   console.log(error);
 });
+
+// add a cylinder that supports the globe
+const supportCylinder = cylinderGenerator.createSupportCylinder({
+  color: "#c5dede"
+});
+scene.add(supportCylinder);
 
 // re-render the scene every frame
 const animate = () => {
