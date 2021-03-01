@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "delaunator": "^4.0.1",
-    "three": "^0.112.1"
+    "three": "^0.125.0"
   },
   "staticFiles": {
     "staticPath": "assets"
